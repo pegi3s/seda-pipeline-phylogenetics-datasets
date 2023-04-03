@@ -21,7 +21,7 @@
 	</params>
 
 	<tasks>
-		<task id="rename-ncbi_1" params="batchSize_rename_ncbi_2"/>
+		<task id="rename-ncbi_1" params="batchSize_rename_ncbi_1"/>
 		<task id="rename-ncbi_2" params="batchSize_rename_ncbi_2" after="rename-ncbi_1"/>
 		<task id="check-genome-contaminants_1" after="rename-ncbi_1" src="task-scripts/check-genome-contaminants.sh"/>
 		<task id="check-genome-contaminants_2" after="rename-ncbi_2" src="task-scripts/check-genome-contaminants.sh"/>
