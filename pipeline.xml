@@ -11,11 +11,8 @@
 		<param name="output" shortName="o" global="true" defaultValue="output"></param>
 		<param name="paramsDir" shortName="pd" global="true" defaultValue="params"></param>
 
-		<!-- Custom batch sizes for tasks. If not specified, all files are processed at the same time (i.e. only
-			one SEDA command is executed). -->
-		<param name="batchSize_filtering_2" shortName="bsf2" defaultValue="2"></param>
-		<!-- If a task/command name contains "-", this character must be replaced with "_" when creating a "batchSize_" parameter -->
-		<param name="batchSize_reverse_complement" shortName="bsrc" defaultValue="1"></param>
+		<param name="batchSize_rename_ncbi_1" shortName="bsrn1" defaultValue="2"></param>
+		<param name="batchSize_rename_ncbi_2" shortName="bsrn2" defaultValue="2"></param>
 
 		<!-- Paths to scripts required by the pipeline runner XML -->
 		<param name="script_pipeline_runner" shortName="spr" global="true" defaultValue="pipeline-runner.sh"></param>
@@ -24,15 +21,14 @@
 	</params>
 
 	<tasks>
-		<task id="filtering_1"/>
-		<task id="filtering_2" params="batchSize_filtering_2"/>
-		<task id="reformat" after="filtering_1 filtering_2"/>
-		<task id="merge" after="reformat"/>
-		<task id="disambiguate" after="merge"/>
-		<task id="reverse-complement" after="disambiguate" params="batchSize_reverse_complement"/>
-        
-		<!-- final-task is not a SEDA command and thus uses "src" to specify the path to the bash script that must
-        be executed. -->	
-		<task id="final-task" after="reverse-complement" src="task-scripts/final-task.sh"></task>
+		<task id="rename-ncbi_1" params="batchSize_rename_ncbi_2"/>
+		<task id="rename-ncbi_2" params="batchSize_rename_ncbi_2" after="rename-ncbi_1"/>
+		<task id="check-genome-contaminants_1" after="rename-ncbi_1" src="task-scripts/check-genome-contaminants.sh"/>
+		<task id="check-genome-contaminants_2" after="rename-ncbi_2" src="task-scripts/check-genome-contaminants.sh"/>
 	</tasks>
+
+	<metadata>
+		<task-description id="rename-ncbi_1">GenBank</task-description>
+		<task-description id="rename-ncbi_2">RefSeq</task-description>
+	</metadata>
 </pipeline>
