@@ -27,10 +27,23 @@
 		<task id="check-genome-contaminants_2" after="rename-ncbi_2" src="task-scripts/check-genome-contaminants.sh"/>
 		<task id="blast_1" after="check-genome-contaminants_1"/>
 		<task id="blast_2" after="check-genome-contaminants_2"/>
+		<task id="rename-ncbi_3" after="blast_1"/>
+		<task id="rename-ncbi_4" after="blast_2"/>
+		<task id="merge_1" after="rename-ncbi_3"/>
+		<task id="merge_2" after="rename-ncbi_4"/>
+		<task id="rename-header-replace-interval_1" after="merge_1"/>
+		<task id="rename-header-replace-interval_2" after="merge_2"/>
+		<task id="rename-header-replace-word_1" after="rename-header-replace-interval_1"/>
+		<task id="rename-header-replace-interval_3" after="rename-header-replace-interval_2"/>
+		<task id="rename-header-replace-word_2" after="rename-header-replace-word_1"/>
+		<task id="rename-header-replace-word_3" after="rename-header-replace-interval_3"/>
+
 	</tasks>
 
 	<metadata>
 		<task-description id="rename-ncbi_1">GenBank</task-description>
 		<task-description id="rename-ncbi_2">RefSeq</task-description>
+		<task-description id="rename-header-replace-word_2">GenBank</task-description>
+		<task-description id="rename-header-replace-word_3">RefSeq</task-description>
 	</metadata>
 </pipeline>
