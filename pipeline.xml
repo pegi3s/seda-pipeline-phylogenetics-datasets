@@ -37,6 +37,7 @@
 		<task id="rename-header-replace-interval_3" after="rename-header-replace-interval_2"/>
 		<task id="rename-header-replace-word_2" after="rename-header-replace-word_1"/>
 		<task id="rename-header-replace-word_3" after="rename-header-replace-interval_3"/>
+		<task id="merge_3" after="rename-header-replace-word_2 rename-header-replace-word_3"/>
 
 	</tasks>
 
