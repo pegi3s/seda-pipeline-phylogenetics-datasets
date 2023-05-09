@@ -45,7 +45,21 @@
 	<metadata>
 		<task-description id="rename-ncbi_1">GenBank</task-description>
 		<task-description id="rename-ncbi_2">RefSeq</task-description>
+		<task-description id="check-genome-contaminants_1">GenBank</task-description>
+		<task-description id="check-genome-contaminants_2">RefSeq</task-description>
+		<task-description id="blast_1">GenBank</task-description>
+		<task-description id="blast_2">RefSeq</task-description>
+		<task-description id="rename-ncbi_3">GenBank</task-description>
+		<task-description id="rename-ncbi_4">RefSeq</task-description>
+		<task-description id="merge_1">GenBank</task-description>
+		<task-description id="merge_2">RefSeq</task-description>
+		<task-description id="rename-header-replace-interval_1">GenBank</task-description>
+		<task-description id="rename-header-replace-interval_2">RefSeq</task-description>
+		<task-description id="rename-header-replace-word_1">GenBank</task-description>
+		<task-description id="rename-header-replace-interval_3">RefSeq</task-description>
 		<task-description id="rename-header-replace-word_2">GenBank</task-description>
 		<task-description id="rename-header-replace-word_3">RefSeq</task-description>
+		<task-description id="merge_3">GenBank, RefSeq</task-description>
+		<task-description id="pattern-filtering_1">GenBank, RefSeq</task-description>
 	</metadata>
 </pipeline>
