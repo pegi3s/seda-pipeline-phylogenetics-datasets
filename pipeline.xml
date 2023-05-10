@@ -40,6 +40,7 @@
 		<task id="merge_3" after="rename-header-replace-word_2 rename-header-replace-word_3"/>
 		<task id="pattern-filtering_1" after="merge_3"/>
 		<task id="pattern-filtering_2" after="pattern-filtering_1"/>
+		<task id="remove-redundant" after="pattern-filtering_2"/>
 	</tasks>
 
 	<metadata>
@@ -61,6 +62,7 @@
 		<task-description id="rename-header-replace-word_3">RefSeq</task-description>
 		<task-description id="merge_3">GenBank, RefSeq</task-description>
 		<task-description id="pattern-filtering_1">GenBank, RefSeq</task-description>
-		<task-description id="pattern-filtering_2">GenBank, RefSeq</task-description>
+		<task-description id="remove-redundant">GenBank, RefSeq</task-description>
+
 	</metadata>
 </pipeline>
