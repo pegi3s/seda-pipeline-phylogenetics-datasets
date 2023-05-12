@@ -44,6 +44,7 @@
 		<task id="filtering_1" after="remove-redundant"/>
 		<task id="reallocate" after="filtering_1"/>
 		<task id="filtering_2" after="reallocate"/>
+		<task id="remove-isoforms" after="filtering_2"/>
 	</tasks>
 
 	<metadata>
@@ -69,5 +70,6 @@
 		<task-description id="filtering_1">GenBank, RefSeq</task-description>
 		<task-description id="reallocate">GenBank, RefSeq</task-description>
 		<task-description id="filtering_2">GenBank, RefSeq</task-description>
+		<task-description id="remove-isoforms">GenBank, RefSeq</task-description>
 	</metadata>
 </pipeline>
