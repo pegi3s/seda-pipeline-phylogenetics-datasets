@@ -13,6 +13,8 @@
 
 		<param name="batchSize_rename_ncbi_1" shortName="bsrn1" defaultValue="2"></param>
 		<param name="batchSize_rename_ncbi_2" shortName="bsrn2" defaultValue="2"></param>
+		<param name="batchSize_blast_1" shortName="bsb1" defaultValue="2"></param>
+		<param name="batchSize_blast_2" shortName="bsb2" defaultValue="2"></param>
 
 		<!-- Paths to scripts required by the pipeline runner XML -->
 		<param name="script_pipeline_runner" shortName="spr" global="true" defaultValue="pipeline-runner.sh"></param>
@@ -22,11 +24,11 @@
 
 	<tasks>
 		<task id="rename-ncbi_1" params="batchSize_rename_ncbi_1"/>
-		<task id="rename-ncbi_2" params="batchSize_rename_ncbi_2" after="rename-ncbi_1"/>
+		<task id="rename-ncbi_2" params="batchSize_rename_ncbi_2"/>
 		<task id="check-genome-contaminants_1" after="rename-ncbi_1" src="task-scripts/check-genome-contaminants.sh"/>
 		<task id="check-genome-contaminants_2" after="rename-ncbi_2" src="task-scripts/check-genome-contaminants.sh"/>
-		<task id="blast_1" after="check-genome-contaminants_1"/>
-		<task id="blast_2" after="check-genome-contaminants_2"/>
+		<task id="blast_1" after="check-genome-contaminants_1" params="batchSize_blast_1"/>
+		<task id="blast_2" after="check-genome-contaminants_2" params="batchSize_blast_2"/>
 		<task id="rename-ncbi_3" after="blast_1"/>
 		<task id="rename-ncbi_4" after="blast_2"/>
 		<task id="merge_1" after="rename-ncbi_3"/>
