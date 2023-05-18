@@ -25,7 +25,12 @@
             "type": "shell",
             "command": "source .vscode/test-directories.txt && sudo rm -rf ${TEST_DIR_FULL}/output && $(pwd)/run.sh ${TEST_DIR_FULL}",
             "problemMatcher": [],
-            "dependsOn": "build"
+            "dependsOn": "build",
+            "options": {
+                "env": {
+                    "SEDA_JAVA_MEMORY": "-Xmx8G"
+                }
+            }
         },
         {
             "label": "export graph",
