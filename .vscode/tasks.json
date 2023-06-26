@@ -37,6 +37,12 @@
             "type": "shell",
             "command": "compi export-graph -o pipeline.png --line-width 2 --task-colors 'rename-ncbi_1,check-genome-contaminants_1,blast_1,rename-ncbi_3,merge_1,rename-header-replace-interval_1,rename-header-replace-word_1,rename-header-replace-word_2:#7050F2;rename-ncbi_2,check-genome-contaminants_2,blast_2,rename-ncbi_4,merge_2,rename-header-replace-interval_2,rename-header-replace-interval_3,rename-header-replace-word_3:#FFBF00'",
             "problemMatcher": []
+        },
+        {
+            "label": "update resources ZIP sample working dir",
+            "type": "shell",
+            "command": "zip -u resources/sample-working-dir.zip run.sh",
+            "problemMatcher": []
         }
     ]
 }

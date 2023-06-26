@@ -2,7 +2,7 @@
 
 <pipeline xmlns="http://www.sing-group.org/compi/pipeline-1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<version>0.1.0</version>
+	<version>1.0.0</version>
 
 	<params>
 		<param name="workingDirectory" shortName="wd" global="true"></param>
@@ -16,7 +16,6 @@
 		<param name="batchSize_blast_1" shortName="bsb1" defaultValue="2"></param>
 		<param name="batchSize_blast_2" shortName="bsb2" defaultValue="2"></param>
 
-		<!-- Paths to scripts required by the pipeline runner XML -->
 		<param name="script_pipeline_runner" shortName="spr" global="true" defaultValue="pipeline-runner.sh"></param>
 		<param name="sedaCli" shortName="sc" global="true" defaultValue="run-cli.sh"></param>
 		<param name="script_create_batches" shortName="scb" global="true" defaultValue="create_batches"></param>
